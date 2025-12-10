@@ -649,6 +649,8 @@ a:focus {
     background-color: #f7f6ef;
     padding-top: 3rem;
     width: 100%;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.03);
 }
 
 .footer-container {
