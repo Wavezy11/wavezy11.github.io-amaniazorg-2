@@ -1702,156 +1702,6 @@ a:focus {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
-.footer {
-  background-color: var(--color-white);
-  color: var(--color-text-dark);
-  padding: var(--spacing-lg) 0 var(--spacing-md);
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-  align-items: start;
-}
-
-.footer-logo .jw-header-logo {
-  margin-bottom: 1rem;
-}
-
-.footer-logo {
-  order: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-logo .footer-badge {
-  margin-top: auto;
-  padding-top: var(--spacing-md);
-}
-
-.footer-contact {
-  order: 2;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-contact .footer-badge {
-  margin-top: auto;
-  padding-top: var(--spacing-md);
-}
-
-.footer-nav {
-  order: 3;
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-badge img:not(#bpsw):not(.footer-badge-svg) {
-  position: relative;
-  left: -33%;
-}
-#bpsw {
-  position: relative;
-  bottom: -135px;
-  left: -20%;   /* Pas dit aan tot hij precies gelijk zit met SKJ */
-}
-.footer-badge-complaints {
-  position: relative;
-  bottom: -90px;   /* Zelfde waarde gebruiken */
-  left: -20%;
-}
-
-.footer-nav .footer-badge {
-  margin-top: auto;
-  padding-top: var(--spacing-md);
-}
-
-.footer-contact h3,
-.footer-nav h3 {
-  color: var(--color-text-dark);
-  margin-bottom: 1rem;
-}
-
-.footer-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-nav ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-nav ul li a {
-  color: var(--color-text-dark);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-nav ul li a:hover {
-  color: var(--color-accent-primary);
-}
-
-.footer-logos {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: var(--spacing-md);
-  flex-wrap: wrap;
-  margin: var(--spacing-md) auto;
-  padding: 0 var(--spacing-sm);
-}
-
-.footer-badge {
-  margin-top: var(--spacing-sm);
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.footer-badge img {
-  display: block;
-  height: 60px;
-  width: auto;
-
-}
-
-
-
-.footer-badge-svg {
-  display: block;
-  height: 60px;
-  width: auto;
-}
-
-.footer-badge-complaints {
-  transform: scale(0.7);
-  transform-origin: center;
-  color: #000;
-}
-
-.footer-badge svg path {
-  fill: currentColor;
-}
-
-.footer-sponsors-mobile {
-  display: none;
-}
-
-.footer-logo img,
-.footer-badge img,
-.footer-badge svg {
-  max-width: 100%;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: var(--spacing-sm);
-  text-align: center;
-  color: var(--color-text-dark);
-}
 
 .section + .section {
   margin-top: var(--spacing-md);
@@ -1920,67 +1770,6 @@ a:focus {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: var(--spacing-sm);
-    align-items: center;
-  }
-
-  .footer-logo {
-    order: 1;
-    margin-bottom: var(--spacing-sm);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-logo .footer-badge {
-    display: none;
-  }
-
-  .footer-contact {
-    order: 2;
-    margin-bottom: var(--spacing-sm);
-    align-items: center;
-  }
-
-  .footer-contact .footer-badge {
-    display: none;
-  }
-
-  .footer-nav {
-    order: 3;
-    margin-bottom: var(--spacing-md);
-    align-items: center;
-  }
-
-  .footer-nav .footer-badge {
-    display: none;
-  }
-
-  .footer-sponsors-mobile {
-    order: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-    margin-bottom: var(--spacing-md);
-  }
-
-  .footer-sponsors-mobile .footer-badge {
-    margin: 0;
-    padding: 0;
-  }
-
-  .footer-bottom {
-    order: 5;
   }
 }
 
@@ -2301,31 +2090,125 @@ a:focus {
     display: block;
   }
 }
+/* --- Footer Layout --- */
+.footer {
+    background-color: #f7f6ef;
+    padding-top: 3rem;
+    width: 100%;
+}
 
-/* ----- FIX FOOTER BADGES ON SMALL DEVICES ----- */
-@media (max-width: 600px) {
+.footer-container {
+    display: grid;
+    /* Desktop: 3 kolommen van gelijke breedte */
+    grid-template-columns: 1fr 1fr 1fr; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 2rem 20px;
+    gap: 2rem; /* Ruimte tussen kolommen */
+}
 
-  /* Reset alle custom posities zodat overlap stopt */
-  #bpsw,
-  .footer-badge-complaints,
-  .footer-badge img {
-      position: static !important;
-      left: auto !important;
-      bottom: auto !important;
-  }
+/* --- Tekst & Layout Styling --- */
+.footer-item {
+    display: flex;
+    flex-direction: column;
+}
 
-  /* Zorg dat alles netjes onder elkaar centreert */
-  .footer-badge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 25px; /* zorgt voor mooie ruimte tussen de 3 badges */
-      margin-top: 20px;
-  }
+.text-area {
+    /* Zorgt dat tekst netjes uitlijnt */
+    align-items: flex-start;
+}
 
-  /* Maak afbeeldingen kleiner op mobiel voor perfecte layout */
-  .footer-badge img {
-      max-width: 120px;
-      height: auto;
-  }
+.logo-area {
+    /* Zorgt dat logos in het midden van hun kolom staan of links, naar keuze */
+    align-items: flex-start; 
+    justify-content: flex-end; /* Duwt logo naar beneden als er ruimte over is */
+}
+
+/* --- Typografie & Links --- */
+.footer h3 {
+    color: #254151;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.footer-desc, .contact-details p, .contact-details a {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.contact-details a:hover, .footer-links a:hover {
+    color: #00757b;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li { margin-bottom: 0.5rem; }
+.footer-links a { color: #555; text-decoration: none; transition: color 0.3s; }
+
+/* --- Brand Styling --- */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+.brand-logo { height: 50px; width: auto; }
+.brand-name-main { color: #00757b; font-weight: 700; font-size: 1.4rem; }
+.brand-name-sub { color: #f4ce50; font-weight: 700; font-size: 1.4rem; }
+
+/* --- Partner Logos Styling --- */
+.partner-logo {
+    height: 70px; /* Mooie vaste hoogte, niet te klein */
+    width: auto;
+    max-width: 80%;
+    object-fit: contain;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* --- Footer Bottom (Copyright + Border) --- */
+.footer-bottom {
+    border-top: 1px solid #ccc; /* De gevraagde border */
+    padding: 1.5rem 20px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    background-color: #f7f6ef; /* Zelfde kleur als footer */
+    margin-top: 1rem;
+}
+
+/* --- RESPONSIVE / MOBIEL --- */
+
+/* Tablet & Mobiel (< 900px) */
+@media (max-width: 900px) {
+    .footer-container {
+        display: flex; /* Switch van Grid naar Flexbox */
+        flex-direction: column; /* Alles onder elkaar */
+        align-items: center; /* Alles centreren */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    /* Forceer de volgorde op mobiel */
+    .text-area { order: 1; width: 100%; align-items: center; }
+    .logo-area { order: 2; width: 100%; align-items: center; justify-content: center; }
+
+    /* Specifiek: Zorg dat logos onder elkaar staan met wat ruimte */
+    .logo-area {
+        margin-bottom: 1rem; /* Ruimte tussen de logos onderling */
+    }
+
+    /* Pas logo grootte aan voor mobiel indien nodig */
+    .partner-logo {
+        height: 80px; /* Iets groter en duidelijker op mobiel */
+    }
+
+    .footer-brand { justify-content: center; }
 }
